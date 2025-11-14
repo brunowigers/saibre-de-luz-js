@@ -1,15 +1,12 @@
-const lampada = document.getElementById("lampada");
+const luz = document.getElementById("luz");
 
-lampada.addEventListener("mouseover",acender);
-lampada.addEventListener("mouseout",apagar);
-
-function acender(){
-    lampada.src = "on.png";
+function ligar(){
+    luz.src = "bru.jpeg";
     document.body.style.background = "#ffeb3b22"
 }
 
 
-function apagar(){
-    lampada.src = "off.png";
+function desligar(){
+    luz.src = "bru1.jpeg";
     document.body.style.background = "#222"
 }
