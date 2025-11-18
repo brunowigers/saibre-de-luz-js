@@ -1,12 +1,28 @@
-const luz = document.getElementById("luz");
+const sabre = document.getElementById("sabre");
 
 function ligar(){
-    luz.src = "bru.jpeg";
-    document.body.style.background = "#ffeb3b22"
+    sabre.src = "bru1.jpeg";
 }
 
 
 function desligar(){
-    luz.src = "bru1.jpeg";
-    document.body.style.background = "#222"
+    sabre.src = "bru.jpeg";
 }
+
+function modoAutomatico(){
+    let estado = 0;
+    intervalo = setInterval(()=>{
+    if(estado === 0 ) desligar();
+    else if (estado === 1) ligar();
+    estado = (estado + 1) % 2;
+},700)
+}
+function parar(){
+    clearInterval(intervalo);
+    limpar();
+}
+
+btnLigar.onclick = ligar;
+btnDesligar.onclick = desligar;
+btnAuto.onclick = modoAutomatico;
+btnParar.onclick = parar;
